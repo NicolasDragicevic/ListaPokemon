@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Hello from "./components/Hello";
+import Button from "./components/Button";
+import Pokemon from "./components/Pokemons";
+import Pokemons from "./components/Pokemons";
+
+let pokemon = [
+  { id: 1, name: "Bulbasaur", types: ["poison", "grass"] },
+  { id: 5, name: "Charmeleon", types: ["fire"] },
+  { id: 9, name: "Blastoise", types: ["water"] },
+  { id: 12, name: "Butterfree", types: ["bug", "flying"] },
+  { id: 16, name: "Pidgey", types: ["normal", "flying"] },
+  { id: 23, name: "Ekans", types: ["poison"] },
+  { id: 24, name: "Arbok", types: ["poison"] },
+  { id: 25, name: "Pikachu", types: ["electric"] },
+  { id: 37, name: "Vulpix", types: ["fire"] },
+  { id: 52, name: "Meowth", types: ["normal"] },
+  { id: 63, name: "Abra", types: ["psychic"] },
+  { id: 67, name: "Machamp", types: ["fighting"] },
+  { id: 72, name: "Tentacool", types: ["water", "poison"] },
+  { id: 74, name: "Geodude", types: ["rock", "ground"] },
+  { id: 87, name: "Dewgong", types: ["water", "ice"] },
+  { id: 98, name: "Krabby", types: ["water"] },
+  { id: 115, name: "Kangaskhan", types: ["normal"] },
+  { id: 122, name: "Mr. Mime", types: ["psychic"] },
+  { id: 133, name: "Eevee", types: ["normal"] },
+  { id: 144, name: "Articuno", types: ["ice", "flying"] },
+  { id: 145, name: "Zapdos", types: ["electric", "flying"] },
+  { id: 146, name: "Moltres", types: ["fire", "flying"] },
+  { id: 148, name: "Dragonair", types: ["dragon"] },
+];
+
+let pokeList = pokemon.map((p, index) => (
+  <Pokemons key={index} perro={p.id} gato={p.name} paloma={p.types} />
+));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="container">
+      <h1>Lista de Pokemones</h1>
+      {pokeList}
     </div>
   );
 }
